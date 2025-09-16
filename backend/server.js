@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
+import cors from "cors";
 
 import visitorRoutes from "./routes/visitor.route.js";
 
@@ -9,6 +10,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 2306;
 
+app.use(cors({ origin: "http://localhost:5173" })); // or "*" for testing
 app.use(express.json());
 app.set("trust proxy", true);
 
