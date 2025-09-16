@@ -21,3 +21,5 @@ const visitorSchema = new mongoose.Schema(
 const Visitor = mongoose.model("Visitor", visitorSchema);
 
 export default Visitor;
+
+// node models/seed/visitor.seed.js
